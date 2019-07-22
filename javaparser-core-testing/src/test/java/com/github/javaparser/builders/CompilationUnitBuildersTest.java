@@ -106,6 +106,9 @@ class CompilationUnitBuildersTest {
     }
 
     class testInnerClass {
+        private testInnerClass() {
+        }
+
 
     }
 

@@ -248,6 +248,9 @@ class ReferenceTypeTest {
     }
 
     class Foo {
+        private Foo() {
+        }
+
 
     }
 
@@ -256,6 +259,9 @@ class ReferenceTypeTest {
     }
 
     class Bazzer<A, B, C> {
+        private Bazzer() {
+        }
+
 
     }
 
@@ -406,6 +412,9 @@ class ReferenceTypeTest {
     void testGetFieldTypeExisting() {
         class Foo<A> {
             List<A> elements;
+            private Foo() {
+            }
+
         }
 
         TypeSolver typeSolver = new ReflectionTypeSolver();
@@ -434,6 +443,9 @@ class ReferenceTypeTest {
     void testGetFieldTypeUnexisting() {
         class Foo<A> {
             List<A> elements;
+            private Foo() {
+            }
+
         }
 
         TypeSolver typeSolver = new ReflectionTypeSolver();

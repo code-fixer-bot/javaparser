@@ -163,4 +163,7 @@ public class TestUtils {
     public static void assertEqualsNoEol(String expected, String actual) {
         assertEquals(normalizeEolInTextBlock(expected, EOL), actual);
     }
+    private TestUtils() {
+    }
+
 }

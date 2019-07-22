@@ -6,6 +6,9 @@ public class InnerClassFieldContainer {
             FieldContainer innerInnerField = new FieldContainer();
             class InnerInnerInnerClass {
                 FieldContainer innerInnerInnerField = new FieldContainer();
+                private InnerInnerInnerClass() {
+                }
+
             }
         }
     }

@@ -38,4 +38,7 @@ class PrintingHelper {
         }
         return "";
     }
+    private PrintingHelper() {
+    }
+
 }

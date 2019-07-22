@@ -112,4 +112,7 @@ class AstResolutionUtils {
             return declared;
         }
     }
+    private AstResolutionUtils() {
+    }
+
 }

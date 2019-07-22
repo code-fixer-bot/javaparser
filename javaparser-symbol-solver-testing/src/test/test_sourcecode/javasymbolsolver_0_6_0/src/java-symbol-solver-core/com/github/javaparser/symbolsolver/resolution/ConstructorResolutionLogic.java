@@ -222,5 +222,8 @@ public class ConstructorResolutionLogic {
         }
         return oneMoreSpecificFound;
     }
+    private ConstructorResolutionLogic() {
+    }
+
 
 }

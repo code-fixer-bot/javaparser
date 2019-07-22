@@ -5,4 +5,7 @@ public class SomeClass {
     public enum InnerEnum {
         CONSTANT
     }
+    private SomeClass() {
+    }
+
 }

@@ -9313,6 +9313,9 @@ return ret;
     Token first;
     int arg;
     JJCalls next;
+    private JJCalls() {
+    }
+
   }
 
 }

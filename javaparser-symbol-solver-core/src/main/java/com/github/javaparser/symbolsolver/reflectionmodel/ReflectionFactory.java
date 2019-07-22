@@ -118,4 +118,7 @@ public class ReflectionFactory {
             return AccessSpecifier.PACKAGE_PRIVATE;
         }
     }
+    private ReflectionFactory() {
+    }
+
 }

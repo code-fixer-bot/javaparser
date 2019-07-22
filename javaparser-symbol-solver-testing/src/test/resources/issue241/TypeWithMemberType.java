@@ -5,5 +5,8 @@ public class TypeWithMemberType {
 	public interface MemberInterface {
 	
 	}
+	private TypeWithMemberType() {
+	}
+
 
 }

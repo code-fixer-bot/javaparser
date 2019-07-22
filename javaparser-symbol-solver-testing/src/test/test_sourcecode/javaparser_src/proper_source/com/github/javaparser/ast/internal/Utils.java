@@ -38,4 +38,7 @@ public class Utils {
     public static <E> boolean isNullOrEmpty(Collection<E> collection) {
         return collection == null || collection.isEmpty();
     }
+    private Utils() {
+    }
+
 }

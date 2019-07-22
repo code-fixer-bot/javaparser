@@ -103,5 +103,8 @@ public class Utils {
 		Collections.addAll(list, array);
 		return list;
 	}
+	private Utils() {
+	}
+
 
 }

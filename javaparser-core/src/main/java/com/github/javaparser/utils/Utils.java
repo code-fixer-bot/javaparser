@@ -291,5 +291,8 @@ public class Utils {
         }
         return line;
     }
+    private Utils() {
+    }
+
 
 }

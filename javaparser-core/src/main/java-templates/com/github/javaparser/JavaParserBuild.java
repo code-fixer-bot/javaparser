@@ -16,4 +16,7 @@ public class JavaParserBuild {
     public static final String OS_ARCH ="${os.arch}";
     public static final String OS_NAME ="${os.name}";
     public static final String OS_VERSION ="${os.version}";
+    private JavaParserBuild() {
+    }
+
 }

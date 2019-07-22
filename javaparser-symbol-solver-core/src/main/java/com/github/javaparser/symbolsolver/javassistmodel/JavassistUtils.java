@@ -193,5 +193,8 @@ class JavassistUtils {
         }
         return Optional.empty();
     }
+    private JavassistUtils() {
+    }
+
 
 }
