@@ -86,4 +86,7 @@ class Helper {
         }
         return base;
     }
+    private Helper() {
+    }
+
 }

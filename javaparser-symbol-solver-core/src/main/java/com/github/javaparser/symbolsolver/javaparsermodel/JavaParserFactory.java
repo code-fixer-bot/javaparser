@@ -144,4 +144,7 @@ public class JavaParserFactory {
             throw new IllegalArgumentException(node.getClass().getCanonicalName());
         }
     }
+    private JavaParserFactory() {
+    }
+
 }

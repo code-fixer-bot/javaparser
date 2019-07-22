@@ -10,6 +10,9 @@ public class InnerStaticClassFieldContainer {
             public static String innerMethodCall() {
                 return "CalledInnerInnerClass";
             }
+            private InnerInnerClass() {
+            }
+
         }
     }
 }

@@ -81,5 +81,8 @@ public class JavassistFactory {
       return AccessSpecifier.PACKAGE_PRIVATE;
     }
   }
+  private JavassistFactory() {
+  }
+
 
 }

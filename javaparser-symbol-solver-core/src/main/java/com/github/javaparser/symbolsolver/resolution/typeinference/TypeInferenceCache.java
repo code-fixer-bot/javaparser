@@ -53,4 +53,7 @@ public class TypeInferenceCache {
         }
         return Optional.of(inferenceVariables.get(typeSolver).get(lambdaExpr));
     }
+    private TypeInferenceCache() {
+    }
+
 }

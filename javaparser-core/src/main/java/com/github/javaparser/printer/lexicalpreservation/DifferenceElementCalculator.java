@@ -238,4 +238,7 @@ class DifferenceElementCalculator {
     static void removeIndentationElements(List<DifferenceElement> elements) {
         elements.removeIf(el -> el.getElement() instanceof CsmIndent || el.getElement() instanceof CsmUnindent);
     }
+    private DifferenceElementCalculator() {
+    }
+
 }

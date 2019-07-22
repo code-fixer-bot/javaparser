@@ -141,4 +141,7 @@ class ReflectionMethodResolutionLogic {
 
         return methodUsage;
     }
+    private ReflectionMethodResolutionLogic() {
+    }
+
 }

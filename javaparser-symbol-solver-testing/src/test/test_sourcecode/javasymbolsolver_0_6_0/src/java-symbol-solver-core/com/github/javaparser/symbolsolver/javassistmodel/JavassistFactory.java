@@ -80,5 +80,8 @@ public class JavassistFactory {
       return AccessLevel.PACKAGE_PROTECTED;
     }
   }
+  private JavassistFactory() {
+  }
+
 
 }

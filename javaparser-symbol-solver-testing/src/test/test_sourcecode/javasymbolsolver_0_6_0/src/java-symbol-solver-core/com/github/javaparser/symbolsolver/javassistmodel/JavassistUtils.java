@@ -174,4 +174,7 @@ class JavassistUtils {
             return objectTypeArgumentToType(typeArgument.getType(), typeSolver, typeParametrizable);
         }
     }
+    private JavassistUtils() {
+    }
+
 }

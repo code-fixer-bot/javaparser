@@ -4,4 +4,7 @@ import com.github.javaparser.javasymbolsolver.javassist_symbols.excluded_jar.Int
 
 public class InterfaceUserExcludedJar implements InterfaceExcludedJar {
     public static final String OWN_FIELD = "ThisIsAString";
+    private InterfaceUserExcludedJar() {
+    }
+
 }

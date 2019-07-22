@@ -34,8 +34,8 @@ public class ExpressionHelper {
             throw new UnsupportedOperationException(expression.toString());
         }
         if (expression instanceof ObjectCreationExpr) {
-            // A class instance creation expression is a poly expression (ยง15.2) if it uses the diamond form for type
-            // arguments to the class, and it appears in an assignment context or an invocation context (ยง5.2, ยง5.3).
+            // A class instance creation expression is a poly expression (ง15.2) if it uses the diamond form for type
+            // arguments to the class, and it appears in an assignment context or an invocation context (ง5.2, ง5.3).
             // Otherwise, it is a standalone expression.
             ObjectCreationExpr objectCreationExpr = (ObjectCreationExpr)expression;
             if (objectCreationExpr.isUsingDiamondOperator()) {
@@ -49,7 +49,7 @@ public class ExpressionHelper {
 
             // A method invocation expression is a poly expression if all of the following are true:
             //
-            // 1. The invocation appears in an assignment context or an invocation context (ยง5.2, ยง5.3).
+            // 1. The invocation appears in an assignment context or an invocation context (ง5.2, ง5.3).
 
             if (!appearsInAssignmentContext(expression) || appearsInInvocationContext(expression)) {
                 return false;
@@ -62,7 +62,7 @@ public class ExpressionHelper {
                 return false;
             }
 
-            // 3. The method to be invoked, as determined by the following subsections, is generic (ยง8.4.4) and has a
+            // 3. The method to be invoked, as determined by the following subsections, is generic (ง8.4.4) and has a
             //    return type that mentions at least one of the method's type parameters.
 
             //boolean condition3 =;
@@ -134,4 +134,7 @@ public class ExpressionHelper {
     public static boolean isCompatibleInAssignmentContext(Expression expression, ResolvedType type, TypeSolver typeSolver) {
         return type.isAssignableBy(JavaParserFacade.get(typeSolver).getType(expression, false));
     }
+    private ExpressionHelper() {
+    }
+
 }

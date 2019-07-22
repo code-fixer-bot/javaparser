@@ -4,6 +4,9 @@ public class FieldDotExpressions {
         InnerClassFieldContainer.InnerClass.innerField.containerField.containerField.secondContainerMethod();
         InnerClassFieldContainer.InnerClass.InnerInnerClass.InnerInnerInnerClass.innerInnerInnerField.thirdContainerMethod();
     }
+    private FieldDotExpressions() {
+    }
+
 }
 
 class FieldContainer {
@@ -27,6 +30,9 @@ class InnerClassFieldContainer {
             FieldContainer innerInnerField = new FieldContainer();
             class InnerInnerInnerClass {
                 FieldContainer innerInnerInnerField = new FieldContainer();
+                private InnerInnerInnerClass() {
+                }
+
             }
         }
     }

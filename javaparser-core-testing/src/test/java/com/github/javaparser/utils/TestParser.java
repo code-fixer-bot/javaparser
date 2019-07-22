@@ -37,4 +37,7 @@ public class TestParser {
     public static BodyDeclaration<?> parseBodyDeclaration(String bd) {
         return unpack(parser.parseBodyDeclaration(bd));
     }
+    private TestParser() {
+    }
+
 }

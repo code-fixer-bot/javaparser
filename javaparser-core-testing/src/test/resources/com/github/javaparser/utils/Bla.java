@@ -1,2 +1,5 @@
 class X {
+    private X() {
+    }
+
 }

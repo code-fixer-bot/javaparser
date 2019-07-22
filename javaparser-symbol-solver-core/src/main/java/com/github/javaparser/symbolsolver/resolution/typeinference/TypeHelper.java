@@ -88,32 +88,32 @@ public class TypeHelper {
         // particular invocation if no applicable declaration can be found using strict invocation contexts. Loose
         // invocation contexts allow the use of one of the following:
         //
-        // - an identity conversion (§5.1.1)
+        // - an identity conversion (�5.1.1)
 
         if (s.equals(t)) {
             return true;
         }
 
-        // - a widening primitive conversion (§5.1.2)
+        // - a widening primitive conversion (�5.1.2)
 
         if (s.isPrimitive() && t.isPrimitive() && areCompatibleThroughWideningPrimitiveConversion(s, t)) {
             return true;
         }
 
-        // - a widening reference conversion (§5.1.5)
+        // - a widening reference conversion (�5.1.5)
 
         if (s.isReferenceType() && t.isReferenceType() && areCompatibleThroughWideningReferenceConversion(s, t)) {
             return true;
         }
 
-        // - a boxing conversion (§5.1.7) optionally followed by widening reference conversion
+        // - a boxing conversion (�5.1.7) optionally followed by widening reference conversion
 
         if (s.isPrimitive() && t.isReferenceType() &&
                 areCompatibleThroughWideningReferenceConversion(toBoxedType(s.asPrimitive()), t)) {
             return true;
         }
 
-        // - an unboxing conversion (§5.1.8) optionally followed by a widening primitive conversion
+        // - an unboxing conversion (�5.1.8) optionally followed by a widening primitive conversion
 
         if (isUnboxable(s) && s.isReferenceType() && t.isPrimitive() &&
                 areCompatibleThroughWideningPrimitiveConversion(toUnboxedType(s.asReferenceType()), t)) {
@@ -121,7 +121,7 @@ public class TypeHelper {
         }
 
         // If, after the conversions listed for an invocation context have been applied, the resulting type is a raw
-        // type (§4.8), an unchecked conversion (§5.1.9) may then be applied.
+        // type (�4.8), an unchecked conversion (�5.1.9) may then be applied.
         //
         // A value of the null type (the null reference is the only such value) may be assigned to any reference type
         if (s.isNull() && t.isReferenceType()) {
@@ -203,7 +203,7 @@ public class TypeHelper {
         //
         //Otherwise:
         //
-        //For each Ui (1 ≤ i ≤ k):
+        //For each Ui (1 ? i ? k):
         //
         //Let ST(Ui) be the set of supertypes of Ui.
         //
@@ -217,11 +217,11 @@ public class TypeHelper {
         //
         //In contrast, intersecting EST(List<String>) = { List, Collection, Object } and EST(List<Object>) = { List, Collection, Object } yields { List, Collection, Object }, which will eventually enable us to produce List<?>.
         //
-        //Let EC, the erased candidate set for U1 ... Uk, be the intersection of all the sets EST(Ui) (1 ≤ i ≤ k).
+        //Let EC, the erased candidate set for U1 ... Uk, be the intersection of all the sets EST(Ui) (1 ? i ? k).
         //
         //Let MEC, the minimal erased candidate set for U1 ... Uk, be:
         //
-        //MEC = { V | V in EC, and for all W ≠ V in EC, it is not the case that W <: V }
+        //MEC = { V | V in EC, and for all W ? V in EC, it is not the case that W <: V }
         //
         //Because we are seeking to infer more precise types, we wish to filter out any candidates that are supertypes of other candidates. This is what computing MEC accomplishes. In our running example, we had EC = { List, Collection, Object }, so MEC = { List }. The next step is to recover type arguments for the erased types in MEC.
         //
@@ -229,9 +229,9 @@ public class TypeHelper {
         //
         //Let the "relevant" parameterizations of G, Relevant(G), be:
         //
-        //Relevant(G) = { V | 1 ≤ i ≤ k: V in ST(Ui) and V = G<...> }
+        //Relevant(G) = { V | 1 ? i ? k: V in ST(Ui) and V = G<...> }
         //
-        //In our running example, the only generic element of MEC is List, and Relevant(List) = { List<String>, List<Object> }. We will now seek to find a type argument for List that contains (§4.5.1) both String and Object.
+        //In our running example, the only generic element of MEC is List, and Relevant(List) = { List<String>, List<Object> }. We will now seek to find a type argument for List that contains (�4.5.1) both String and Object.
         //
         //This is done by means of the least containing parameterization (lcp) operation defined below. The first line defines lcp() on a set, such as Relevant(List), as an operation on a list of the elements of the set. The next line defines the operation on such lists, as a pairwise reduction on the elements of the list. The third line is the definition of lcp() on pairs of parameterized types, which in turn relies on the notion of least containing type argument (lcta). lcta() is defined for all possible cases.
         //
@@ -241,7 +241,7 @@ public class TypeHelper {
         //
         //where lcp(), the least containing invocation, is:
         //
-        //lcp(S) = lcp(e1, ..., en) where ei (1 ≤ i ≤ n) in S
+        //lcp(S) = lcp(e1, ..., en) where ei (1 ? i ? n) in S
         //
         //lcp(e1, ..., en) = lcp(lcp(e1, e2), e3, ..., en)
         //
@@ -265,13 +265,13 @@ public class TypeHelper {
         //
         //lcta(U) = ? if U's upper bound is Object, otherwise ? extends lub(U,Object)
         //
-        //and where glb() is as defined in §5.1.10.
+        //and where glb() is as defined in �5.1.10.
         //
         //Let lub(U1 ... Uk) be:
         //
         //Best(W1) & ... & Best(Wr)
         //
-        //where Wi (1 ≤ i ≤ r) are the elements of MEC, the minimal erased candidate set of U1 ... Uk;
+        //where Wi (1 ? i ? r) are the elements of MEC, the minimal erased candidate set of U1 ... Uk;
         //
         //and where, if any of these elements are generic, we use the candidate parameterization (so as to recover type arguments):
         //
@@ -298,7 +298,7 @@ public class TypeHelper {
                 .anyMatch(tp -> tp.isWildcard());
         if (wildcardParameterized) {
             // - If T is a wildcard-parameterized functional interface type and the lambda expression is explicitly typed,
-            //   then the ground target type is inferred as described in §18.5.3.
+            //   then the ground target type is inferred as described in �18.5.3.
 
             if (ExpressionHelper.isExplicitlyTyped(lambdaExpr)) {
                 used18_5_3 = true;
@@ -306,7 +306,7 @@ public class TypeHelper {
             }
 
             // - If T is a wildcard-parameterized functional interface type and the lambda expression is implicitly typed,
-            //   then the ground target type is the non-wildcard parameterization (§9.9) of T.
+            //   then the ground target type is the non-wildcard parameterization (�9.9) of T.
 
             else {
                 return new Pair<>(nonWildcardParameterizationOf(T.asReferenceType(), typeSolver), used18_5_3);
@@ -325,7 +325,7 @@ public class TypeHelper {
         List<ResolvedType> AIs = originalType.typeParametersValues();
         List<ResolvedTypeParameterDeclaration> TPs = originalType.getTypeDeclaration().getTypeParameters();
 
-        // Let P1...Pn be the type parameters of I with corresponding bounds B1...Bn. For all i (1 ≤ i ≤ n),
+        // Let P1...Pn be the type parameters of I with corresponding bounds B1...Bn. For all i (1 ? i ? n),
         // Ti is derived according to the form of Ai:
 
         ResolvedReferenceType object = new ReferenceTypeImpl(typeSolver.solveType(Object.class.getCanonicalName()), typeSolver);
@@ -359,7 +359,7 @@ public class TypeHelper {
                     Ti = Bi;
                 }
 
-                //   - If Ai is a upper-bounded wildcard ? extends Ui, then Ti = glb(Ui, Bi) (§5.1.10).
+                //   - If Ai is a upper-bounded wildcard ? extends Ui, then Ti = glb(Ui, Bi) (�5.1.10).
 
                 else if (Ai.isWildcard() && Ai.asWildcard().isUpperBounded()) {
                     ResolvedType Ui = Ai.asWildcard().getBoundedType();
@@ -402,4 +402,7 @@ public class TypeHelper {
         }
         return new ResolvedIntersectionType(types);
     }
+    private TypeHelper() {
+    }
+
 }

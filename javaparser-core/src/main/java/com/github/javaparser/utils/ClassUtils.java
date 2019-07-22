@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2010 JÃºlio Vilmar Gesser.
+ * Copyright (C) 2007-2010 Júlio Vilmar Gesser.
  * Copyright (C) 2011, 2013-2016 The JavaParser Team.
  *
  * This file is part of JavaParser.
@@ -85,4 +85,7 @@ public class ClassUtils {
     public static boolean isPrimitiveWrapper(final Class<?> type) {
         return wrapperPrimitiveMap.containsKey(type);
     }
+    private ClassUtils() {
+    }
+
 }
