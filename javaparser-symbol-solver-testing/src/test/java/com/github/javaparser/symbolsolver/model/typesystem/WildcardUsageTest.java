@@ -34,6 +34,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class WildcardUsageTest {
 
     class Foo {
+        private Foo() {
+        }
+
     }
 
     class Bar extends Foo {

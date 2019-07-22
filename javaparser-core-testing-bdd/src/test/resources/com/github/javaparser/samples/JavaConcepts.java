@@ -92,6 +92,9 @@ public class JavaConcepts<T extends List<int[]>, X> extends Base implements Seri
             x = x % 1;
             x = x / 1;
         }
+        private Ugly() {
+        }
+
     }
 
     ;
@@ -249,7 +252,7 @@ public class JavaConcepts<T extends List<int[]>, X> extends Base implements Seri
             }
         }
 
-        private synchronized int doSomething()[] {
+        private synchronized int ()[]doSomething {
             List<? extends Number> x = new ArrayList<Integer>();
             return new int[]{1};
         }

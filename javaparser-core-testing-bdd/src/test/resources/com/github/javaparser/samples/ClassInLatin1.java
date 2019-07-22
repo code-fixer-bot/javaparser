@@ -1,6 +1,9 @@
 // Comment in Latin1:
-// A l'émej in piasì che sent dësgust.
+// A l'ï¿½mej in piasï¿½ che sent dï¿½sgust.
 // For the curios reader, this is Piedmontese dialect
 class A {
+    private A() {
+    }
+
 
 }

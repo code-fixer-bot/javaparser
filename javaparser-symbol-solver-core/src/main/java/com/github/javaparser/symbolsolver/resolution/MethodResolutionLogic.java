@@ -673,6 +673,9 @@ public class MethodResolutionLogic {
             return;
         }
     }
+    private MethodResolutionLogic() {
+    }
+
 
 
 }

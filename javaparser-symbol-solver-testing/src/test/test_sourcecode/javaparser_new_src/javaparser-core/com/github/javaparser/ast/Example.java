@@ -27,5 +27,8 @@ public class Example {
         CompilationUnit cu = JavaParser.parse(stream);
 
     }
+    private Example() {
+    }
+
 
 }

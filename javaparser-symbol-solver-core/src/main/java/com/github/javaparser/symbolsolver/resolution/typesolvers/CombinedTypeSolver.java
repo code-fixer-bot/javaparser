@@ -188,5 +188,8 @@ public class CombinedTypeSolver implements TypeSolver {
                 return false;
             };
         }
+        private ExceptionHandlers() {
+        }
+
     }
 }

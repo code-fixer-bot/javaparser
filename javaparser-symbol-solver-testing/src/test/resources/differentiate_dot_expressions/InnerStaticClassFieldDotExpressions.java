@@ -5,4 +5,7 @@ public class InnerStaticClassFieldDotExpressions {
         // force the solving of the argument
         Integer.parseInt(InnerStaticClassFieldContainer.InnerClass.InnerInnerClass.MY_INT);
     }
+    private InnerStaticClassFieldDotExpressions() {
+    }
+
 }

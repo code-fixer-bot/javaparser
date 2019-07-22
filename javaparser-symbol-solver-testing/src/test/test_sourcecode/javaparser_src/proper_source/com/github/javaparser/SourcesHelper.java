@@ -59,5 +59,8 @@ public class SourcesHelper {
     static Reader stringToReader(String s){
         return new StringReader(s);
     }
+    private SourcesHelper() {
+    }
+
 
 }

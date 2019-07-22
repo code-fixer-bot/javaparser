@@ -402,4 +402,7 @@ public class TypeHelper {
         }
         return new ResolvedIntersectionType(types);
     }
+    private TypeHelper() {
+    }
+
 }

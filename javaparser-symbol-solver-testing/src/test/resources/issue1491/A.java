@@ -17,4 +17,7 @@ class B {
     public static void FUNC3(Class<?> arg) {
         return;
     }
+    private B() {
+    }
+
 }

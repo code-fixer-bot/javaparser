@@ -4,4 +4,7 @@ import com.github.javaparser.javasymbolsolver.javassist_symbols.included_jar.Int
 
 public class InterfaceUserIncludedJar implements InterfaceIncludedJar {
     public static final String OWN_FIELD = "ThisIsAString";
+    private InterfaceUserIncludedJar() {
+    }
+
 }

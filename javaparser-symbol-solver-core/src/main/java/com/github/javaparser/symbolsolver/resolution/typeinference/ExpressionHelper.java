@@ -134,4 +134,7 @@ public class ExpressionHelper {
     public static boolean isCompatibleInAssignmentContext(Expression expression, ResolvedType type, TypeSolver typeSolver) {
         return type.isAssignableBy(JavaParserFacade.get(typeSolver).getType(expression, false));
     }
+    private ExpressionHelper() {
+    }
+
 }

@@ -9143,6 +9143,9 @@ List vars;
     Token first;
     int arg;
     JJCalls next;
+    private JJCalls() {
+    }
+
   }
 
 }

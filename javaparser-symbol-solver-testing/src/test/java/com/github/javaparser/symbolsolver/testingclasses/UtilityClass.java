@@ -4,4 +4,7 @@ public class UtilityClass {
     public static void method(SomeClass.InnerEnum e) {
 
     }
+    private UtilityClass() {
+    }
+
 }

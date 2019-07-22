@@ -85,4 +85,7 @@ public class ClassUtils {
     public static boolean isPrimitiveWrapper(final Class<?> type) {
         return wrapperPrimitiveMap.containsKey(type);
     }
+    private ClassUtils() {
+    }
+
 }

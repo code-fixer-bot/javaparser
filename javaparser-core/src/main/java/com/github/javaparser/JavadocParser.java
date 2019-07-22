@@ -149,4 +149,7 @@ class JavadocParser {
             return -1;
         }
     }
+    private JavadocParser() {
+    }
+
 }
