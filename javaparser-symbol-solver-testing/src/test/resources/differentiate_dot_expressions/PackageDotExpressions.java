@@ -13,4 +13,7 @@ public class PackageDotExpressions {
         com.packageName.InnerClassFieldContainer.InnerClass.innerField.containerField.containerField.secondContainerMethod();
         com.packageName.InnerClassFieldContainer.InnerClass.InnerInnerClass.InnerInnerInnerClass.innerInnerInnerField.thirdContainerMethod();
     }
+    private PackageDotExpressions() {
+    }
+
 }

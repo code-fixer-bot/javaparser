@@ -11,6 +11,9 @@ public class InnerClassContainer {
                 public static String innerInnerMethodCall() {
                     return "CalledInnerInnerInnerClass";
                 }
+                private InnerInnerInnerClass() {
+                }
+
             }
         }
     }

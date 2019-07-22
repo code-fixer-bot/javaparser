@@ -212,4 +212,7 @@ public class TokenTypes {
                 throw new AssertionError("Invalid token kind " + kind);
         }
     }
+    private TokenTypes() {
+    }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2010 JÃºlio Vilmar Gesser.
+ * Copyright (C) 2007-2010 Júlio Vilmar Gesser.
  * Copyright (C) 2011, 2013-2015 The JavaParser Team.
  *
  * This file is part of JavaParser.
@@ -59,5 +59,8 @@ public class SourcesHelper {
     static Reader stringToReader(String s){
         return new StringReader(s);
     }
+    private SourcesHelper() {
+    }
+
 
 }

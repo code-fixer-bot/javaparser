@@ -44,6 +44,9 @@ class ReflectionClassDeclarationTest extends AbstractSymbolResolutionTest {
     void testIsClass() {
         class Foo<E> {
             E field;
+            private Foo() {
+            }
+
         }
         class Bar extends Foo<String> {
         }
@@ -61,6 +64,9 @@ class ReflectionClassDeclarationTest extends AbstractSymbolResolutionTest {
     void testGetSuperclassSimpleImplicit() {
         class Foo<E> {
             E field;
+            private Foo() {
+            }
+
         }
 
         TypeSolver typeResolver = new ReflectionTypeSolver();
@@ -74,6 +80,9 @@ class ReflectionClassDeclarationTest extends AbstractSymbolResolutionTest {
     @Test
     void testGetSuperclassSimple() {
         class Bar {
+            private Bar() {
+            }
+
         }
         class Foo<E> extends Bar {
             E field;
@@ -91,6 +100,9 @@ class ReflectionClassDeclarationTest extends AbstractSymbolResolutionTest {
     void testGetSuperclassWithGenericSimple() {
         class Foo<E> {
             E field;
+            private Foo() {
+            }
+
         }
         class Bar extends Foo<String> {
         }
@@ -109,6 +121,9 @@ class ReflectionClassDeclarationTest extends AbstractSymbolResolutionTest {
     void testGetSuperclassWithGenericInheritanceSameName() {
         class Foo<E> {
             E field;
+            private Foo() {
+            }
+
         }
         class Bar<E> extends Foo<E> {
         }
@@ -131,6 +146,9 @@ class ReflectionClassDeclarationTest extends AbstractSymbolResolutionTest {
     void testGetSuperclassWithGenericInheritanceDifferentName() {
         class Foo<E> {
             E field;
+            private Foo() {
+            }
+
         }
         class Bar extends Foo<String> {
         }
@@ -148,6 +166,9 @@ class ReflectionClassDeclarationTest extends AbstractSymbolResolutionTest {
     void testGetFieldDeclarationTypeVariableInheritance() {
         class Foo<E> {
             E field;
+            private Foo() {
+            }
+
         }
         class Bar extends Foo<String> {
         }
@@ -798,6 +819,9 @@ class ReflectionClassDeclarationTest extends AbstractSymbolResolutionTest {
             public static ClassWithSyntheticConstructor create() {
                 return new ClassWithSyntheticConstructor();
             }
+            private ClassWithSyntheticConstructorHelper() {
+            }
+
         }
     }
 

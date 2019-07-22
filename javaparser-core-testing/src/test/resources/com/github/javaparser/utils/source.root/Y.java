@@ -1,3 +1,6 @@
 class Y {
+    private Y() {
+    }
+
     
 }

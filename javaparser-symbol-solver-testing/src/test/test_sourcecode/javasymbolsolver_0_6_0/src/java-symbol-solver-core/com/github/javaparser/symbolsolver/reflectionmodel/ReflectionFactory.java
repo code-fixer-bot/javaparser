@@ -115,4 +115,7 @@ public class ReflectionFactory {
             return AccessLevel.PACKAGE_PROTECTED;
         }
     }
+    private ReflectionFactory() {
+    }
+
 }

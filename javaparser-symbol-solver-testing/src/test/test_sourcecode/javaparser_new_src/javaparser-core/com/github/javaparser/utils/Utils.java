@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2010 JÃºlio Vilmar Gesser.
+ * Copyright (C) 2007-2010 Júlio Vilmar Gesser.
  * Copyright (C) 2011, 2013-2016 The JavaParser Team.
  *
  * This file is part of JavaParser.
@@ -103,5 +103,8 @@ public class Utils {
 		Collections.addAll(list, array);
 		return list;
 	}
+	private Utils() {
+	}
+
 
 }

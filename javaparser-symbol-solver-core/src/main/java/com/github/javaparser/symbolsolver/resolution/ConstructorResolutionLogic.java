@@ -29,7 +29,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * @author Fred LefÃ©vÃ¨re-Laoide
+ * @author Fred Lefévère-Laoide
  */
 public class ConstructorResolutionLogic {
 
@@ -222,5 +222,8 @@ public class ConstructorResolutionLogic {
         }
         return oneMoreSpecificFound;
     }
+    private ConstructorResolutionLogic() {
+    }
+
 
 }

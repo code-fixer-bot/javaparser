@@ -4,6 +4,9 @@ public class InnerClassDotExpressions {
         InnerClassContainer.InnerClass.InnerInnerClass.innerMethodCall();
         InnerClassContainer.InnerClass.InnerInnerClass.InnerInnerInnerClass.innerInnerMethodCall();
     }
+    private InnerClassDotExpressions() {
+    }
+
 }
 
 class InnerClassContainer {
@@ -19,6 +22,9 @@ class InnerClassContainer {
                 public static String innerInnerMethodCall() {
                     return "CalledInnerInnerInnerClass";
                 }
+                private InnerInnerInnerClass() {
+                }
+
             }
         }
     }
